@@ -26,7 +26,7 @@ def choose_players_team(pokemon_list):
             players_choice = int(input("\nInput a number to select a pokemon from the list above: "))
             if players_choice in range(1, len(pokemon_list), 1):
                 chosen_pokemon.append(pokemon_list[players_choice - 1])
-                print(f"\n{pokemon_list[players_choice].get_name()} has been added to your team!")
+                print(f"\n{pokemon_list[players_choice - 1].get_name()} has been added to your team!")
                 continue
             else:
                 print(f"Your selection was invalid. Please choose a number between 1 and {len(pokemon_list)}")
