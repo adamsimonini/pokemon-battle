@@ -7,3 +7,9 @@ class User():
 
     def set_team(self, chosen_pokemon):
         self.pokemon_team = chosen_pokemon
+
+    def print_team(self):
+        for character in self.pokemon_team:
+            print(character.get_name())
+
+
