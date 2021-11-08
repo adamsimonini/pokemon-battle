@@ -1,4 +1,5 @@
 import random
+from pokemon_pkg.pokemon import type_icons
 
 
 def choose_computers_team(pokemon_roster, team_size):
@@ -14,7 +15,7 @@ def list_pokemon_to_user(pokemon_roster):
     number_to_pokemon = {}
     print("")
     for i, pokemon_name in enumerate(pokemon_roster):
-        print(f"{i + 1}: {pokemon_name}")
+        print(f"{i + 1}: {pokemon_name} {pokemon_roster[pokemon_name].get_type_icon()}")
         number_to_pokemon[i + 1] = pokemon_name
     return number_to_pokemon
 
@@ -34,7 +35,7 @@ def choose_players_team(pokemon_roster):
             if players_choice > 0 and players_choice in range(len(pokemon_roster) + 1):
                 pokemon = pokemon_roster[number_to_pokemon[players_choice]]
                 chosen_pokemon[pokemon.get_name()] = pokemon
-                print(f"\n*** {pokemon.get_name()} has been added to your team! ***")
+                print(f"\n*** {pokemon.get_name()} {pokemon.get_type_icon()} has been added to your team! ***")
                 pokemon_roster.pop(pokemon.get_name(), None)
                 continue
 

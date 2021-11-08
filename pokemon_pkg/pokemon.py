@@ -1,11 +1,13 @@
 class Pokemon:
-    def __init__(self, name, hp, attack, speed, type, weaknesses):
+    def __init__(self, name, hp, attack, speed, type, type_icon, weaknesses):
         self.name = name
         self.max_hp = hp
         self.current_hp = hp
+        self.knocked_out = False
         self.attack = attack
         self.speed = speed
         self.type = type
+        self.type_icon = type_icon
         self.weaknesses = weaknesses
 
     def get_name(self):
@@ -13,6 +15,15 @@ class Pokemon:
 
     def get_attack(self):
         return self.attack
+
+    def get_type(self):
+        return self.type
+
+    def get_type_icon(self):
+        return self.type_icon
+
+    def get_hp_status(self):
+        return f"{self.current_hp}/{self.max_hp} HP"
 
 
 pokemon_list = {
@@ -22,6 +33,7 @@ pokemon_list = {
         "attack": 60,
         "speed": 100,
         "type": "psychic",
+        "type_icon": "🔮",
         "weaknesses": "psychic"
     },
     "Charizard": {
@@ -30,6 +42,7 @@ pokemon_list = {
         "attack": 90,
         "speed": 75,
         "type": "fire",
+        "type_icon": "🔥",
         "weaknesses": "water"
     },
     "Blastoise": {
@@ -37,7 +50,8 @@ pokemon_list = {
         "hp": 185,
         "attack": 80,
         "speed": 70,
-        "type": "fire",
+        "type": "water",
+        "type_icon": "💧",
         "weaknesses": "grass"
     },
     "Venasaur": {
@@ -46,8 +60,16 @@ pokemon_list = {
         "attack": 80,
         "speed": 70,
         "type": "grass",
+        "type_icon": "🍃",
         "weaknesses": "fire"
     },
+}
+
+type_icons = {
+    "fire": "🔥",
+    "grass": "🍃",
+    "psychic": "🔮",
+    "water": "💧",
 }
 
 
@@ -57,5 +79,5 @@ def build_pokemon_roster():
     for name, stats in pokemon_list.items():
         # pokemon constructor: name, hp, attack, speed, type, weakness
         # add to pokemon_roster pokemon of class Pokemon using the pokemon_list for the data
-        pokemon_roster[name] = Pokemon(stats["name"], stats["hp"], stats["attack"], stats["speed"], stats["type"], stats["weaknesses"])
+        pokemon_roster[name] = Pokemon(stats["name"], stats["hp"], stats["attack"], stats["speed"], stats["type"], stats["type_icon"], stats["weaknesses"])
     return pokemon_roster
