@@ -41,7 +41,12 @@ player.print_team_status()
 # BATTLE PHASE
 
 # both users select their initial active pokemon
-set_active_pokemon(player, computer)
+set_active_pokemon(computer)
+set_active_pokemon(player)
+
+# TODO: while neither player winner, battle
+
+battle_turn(player, computer)
 
 # assign two users
 # enablue user to choose 3 pokemon

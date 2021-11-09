@@ -3,7 +3,7 @@ class Pokemon:
         self.name = name
         self.max_hp = hp
         self.current_hp = hp
-        self.knocked_out = False
+        self.is_knocked_out = False
         self.attack = attack
         self.speed = speed
         self.type = type
@@ -22,8 +22,22 @@ class Pokemon:
     def get_type_icon(self):
         return self.type_icon
 
+    def get_speed(self):
+        return self.speed
+
     def get_hp_status(self):
-        return f"{self.current_hp}/{self.max_hp} HP"
+        if self.current_hp > 0:
+            return f"{self.name} has {self.current_hp}/{self.max_hp} HP remaining"
+        return False
+
+    def get_current_hp(self):
+        return self.current_hp
+
+    def set_hp(self, hp):
+        self.current_hp = hp
+
+    def get_knocked_out_status(self):
+        return self.is_knocked_out
 
 
 pokemon_list = {
@@ -39,7 +53,7 @@ pokemon_list = {
     "Charizard": {
         "name": "Charizard",
         "hp": 200,
-        "attack": 90,
+        "attack": 95,
         "speed": 75,
         "type": "fire",
         "type_icon": "🔥",
@@ -47,8 +61,8 @@ pokemon_list = {
     },
     "Blastoise": {
         "name": "Blastoise",
-        "hp": 185,
-        "attack": 80,
+        "hp": 190,
+        "attack": 85,
         "speed": 70,
         "type": "water",
         "type_icon": "💧",
@@ -56,7 +70,7 @@ pokemon_list = {
     },
     "Venasaur": {
         "name": "Venasaur",
-        "hp": 180,
+        "hp": 185,
         "attack": 80,
         "speed": 70,
         "type": "grass",
@@ -90,6 +104,9 @@ def list_pokemon_stats():
         while len(formatted_pokemon_name) < 9:
             formatted_pokemon_name += " "
         stats = pokemon_list[pokemon]
+        # for stat, value in pokemon_list[pokemon].items():
+        #     sentence += (f"{stat.upper()}: {value} / ")
         print(
-            f"{i + 1}) {formatted_pokemon_name} | HP: {stats['hp']} | ATTACK: {stats['attack']} | SPEED: {stats['speed']} | TYPE {stats['type']} {stats['type_icon']} | WEAKNESSES: {stats['weaknesses']} {type_icons[stats['weaknesses']]}")
+            f"{i + 1}) {formatted_pokemon_name} | HP: {stats['hp']} | ATTACK: {stats['attack']} | SPEED: {stats['speed']} | TYPE {stats['type']} {stats['type_icon']} | WEAKNESSES: {stats['weaknesses']} {type_icons[stats['weaknesses']]}"
+        )
     print(" \n-------------------------------------------------------------------------------------- ")

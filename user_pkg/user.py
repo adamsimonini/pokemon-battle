@@ -18,6 +18,9 @@ class User():
     def get_team(self):
         return self.pokemon_team
 
+    def get_active_pokemon(self):
+        return self.active_pokemon
+
     def print_team_status(self):
         print(f"\n*** {self.name}'s current team status ***")
         for pokemon in self.pokemon_team:
