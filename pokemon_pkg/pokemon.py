@@ -29,8 +29,8 @@ class Pokemon:
 pokemon_list = {
     "Gengar": {
         "name": "Gengar",
-        "hp": 150,
-        "attack": 60,
+        "hp": 165,
+        "attack": 75,
         "speed": 100,
         "type": "psychic",
         "type_icon": "🔮",
@@ -81,3 +81,15 @@ def build_pokemon_roster():
         # add to pokemon_roster pokemon of class Pokemon using the pokemon_list for the data
         pokemon_roster[name] = Pokemon(stats["name"], stats["hp"], stats["attack"], stats["speed"], stats["type"], stats["type_icon"], stats["weaknesses"])
     return pokemon_roster
+
+
+def list_pokemon_stats():
+    print(" ----------------------------------- POKEMON STATS ------------------------------------\n ")
+    for i, pokemon in enumerate(pokemon_list):
+        formatted_pokemon_name = pokemon
+        while len(formatted_pokemon_name) < 9:
+            formatted_pokemon_name += " "
+        stats = pokemon_list[pokemon]
+        print(
+            f"{i + 1}) {formatted_pokemon_name} | HP: {stats['hp']} | ATTACK: {stats['attack']} | SPEED: {stats['speed']} | TYPE {stats['type']} {stats['type_icon']} | WEAKNESSES: {stats['weaknesses']} {type_icons[stats['weaknesses']]}")
+    print(" \n-------------------------------------------------------------------------------------- ")

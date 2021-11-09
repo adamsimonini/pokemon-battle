@@ -6,7 +6,7 @@
 #     print(possible_pokemon)
 
 
-def initial_active_pokemon(player, computer):
+def set_active_pokemon(player, computer):
     player.select_active_pokemon()
     print(f"\n{player.get_name()}'s Active Pokemon:")
     print(player.active_pokemon.get_name(), player.active_pokemon.get_type_icon(), player.active_pokemon.get_hp_status())
@@ -14,6 +14,7 @@ def initial_active_pokemon(player, computer):
     computer.select_active_pokemon()
     print("\nComputer's Active Pokemon:")
     print(computer.active_pokemon.get_name(), computer.active_pokemon.get_type_icon(), computer.active_pokemon.get_hp_status())
+
 
 def filter_knocked_out(pokemon):
     print(pokemon)

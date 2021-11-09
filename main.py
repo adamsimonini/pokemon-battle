@@ -18,6 +18,8 @@ print('''_
 player = User("Player")
 computer = User("Computer")
 
+list_pokemon_stats()
+
 # lOAD IN POKEMON
 # creates a dictionary of Pokemon objects based on the pokemon within pokemon_list
 pokemon_roster = build_pokemon_roster()
@@ -39,7 +41,7 @@ player.print_team_status()
 # BATTLE PHASE
 
 # both users select their initial active pokemon
-initial_active_pokemon(player, computer)
+set_active_pokemon(player, computer)
 
 # assign two users
 # enablue user to choose 3 pokemon

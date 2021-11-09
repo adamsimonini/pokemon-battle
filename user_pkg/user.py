@@ -32,5 +32,5 @@ class User():
             self.active_pokemon = self.pokemon_team[selected_pokemon]
             return None
         number_to_pokemon = list_pokemon_to_user(self.pokemon_team)
-        players_choice = int(input("\nInput a number to select a pokemon from the list above. It will become your active pokemon: "))
+        players_choice = int(input("\nInput a number from the list above to select a pokemon. It will become your active pokemon: "))
         self.active_pokemon = self.pokemon_team[number_to_pokemon[players_choice]]
