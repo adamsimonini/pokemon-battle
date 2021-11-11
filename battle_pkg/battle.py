@@ -76,6 +76,6 @@ def battle_turn(user_one, user_two):
 
 def check_for_knockout(user, pokemon):
     if pokemon.is_knocked_out:
-        print(f"\n{user.name}'s {pokemon.type_icon}-{pokemon.name}💀 has been knocked out!")
+        print(f"\n{user.name}'s {pokemon.type_icon}-{pokemon.name}-💀 has been knocked out!")
         return True
     return False
