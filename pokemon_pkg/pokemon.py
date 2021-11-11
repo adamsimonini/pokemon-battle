@@ -52,7 +52,7 @@ pokemon_list = {
     },
     "Charizard": {
         "name": "Charizard",
-        "hp": 200,
+        "hp": 1,
         "attack": 95,
         "speed": 75,
         "type": "fire",
@@ -61,7 +61,7 @@ pokemon_list = {
     },
     "Blastoise": {
         "name": "Blastoise",
-        "hp": 190,
+        "hp": 1,
         "attack": 85,
         "speed": 70,
         "type": "water",
@@ -70,7 +70,7 @@ pokemon_list = {
     },
     "Venasaur": {
         "name": "Venasaur",
-        "hp": 185,
+        "hp": 1,
         "attack": 80,
         "speed": 70,
         "type": "grass",
@@ -98,7 +98,7 @@ def build_pokemon_roster():
 
 
 def list_pokemon_stats():
-    print(" ----------------------------------- POKEMON STATS ------------------------------------\n ")
+    print("------------------------------------- POKEMON STATS --------------------------------------\n ")
     for i, pokemon in enumerate(pokemon_list):
         formatted_pokemon_name = pokemon
         while len(formatted_pokemon_name) < 9:
@@ -109,4 +109,4 @@ def list_pokemon_stats():
         print(
             f"{i + 1}) {formatted_pokemon_name} | HP: {stats['hp']} | ATTACK: {stats['attack']} | SPEED: {stats['speed']} | TYPE {stats['type']} {stats['type_icon']} | WEAKNESSES: {stats['weaknesses']} {type_icons[stats['weaknesses']]}"
         )
-    print(" \n-------------------------------------------------------------------------------------- ")
+    print("\n------------------------------------------------------------------------------------------ ")
