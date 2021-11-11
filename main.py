@@ -1,5 +1,6 @@
 import random
 import copy
+import vlc
 from user_pkg.user import *
 from pokemon_pkg.pokemon import *
 from pokemon_pkg.choose import *
@@ -45,8 +46,10 @@ set_active_pokemon(computer)
 set_active_pokemon(player)
 
 # TODO: while neither player winner, battle
-
+# battle_music = vlc.MediaPlayer("file:///audio/pokemon_battle-music.mp3")
+# battle_music.play()
 battle_turn(player, computer)
+# battle_music.stop()
 
 # assign two users
 # enablue user to choose 3 pokemon

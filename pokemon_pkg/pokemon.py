@@ -52,7 +52,7 @@ pokemon_list = {
     },
     "Charizard": {
         "name": "Charizard",
-        "hp": 1,
+        "hp": 200,
         "attack": 95,
         "speed": 75,
         "type": "fire",
@@ -61,7 +61,7 @@ pokemon_list = {
     },
     "Blastoise": {
         "name": "Blastoise",
-        "hp": 1,
+        "hp": 190,
         "attack": 85,
         "speed": 70,
         "type": "water",
@@ -70,7 +70,7 @@ pokemon_list = {
     },
     "Venasaur": {
         "name": "Venasaur",
-        "hp": 1,
+        "hp": 185,
         "attack": 80,
         "speed": 70,
         "type": "grass",
