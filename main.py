@@ -1,6 +1,6 @@
 import random
 import copy
-import vlc
+# import vlc
 from user_pkg.user import *
 from pokemon_pkg.pokemon import *
 from pokemon_pkg.choose import *
