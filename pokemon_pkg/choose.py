@@ -1,5 +1,4 @@
 import random
-from pokemon_pkg.pokemon import type_icons
 
 
 def choose_computers_team(pokemon_roster, team_size):

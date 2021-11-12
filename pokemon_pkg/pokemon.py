@@ -1,14 +1,14 @@
 class Pokemon:
-    def __init__(self, name, hp, attack, speed, type, type_icon, weaknesses):
+    def __init__(self, name, hp, attack, speed):
         self.name = name
         self.max_hp = hp
         self.current_hp = hp
         self.is_knocked_out = False
         self.attack = attack
         self.speed = speed
-        self.type = type
-        self.type_icon = type_icon
-        self.weaknesses = weaknesses
+        # self.type = type
+        # self.type_icon = type_icon
+        # self.weaknesses = weaknesses
 
     def get_name(self):
         return self.name
@@ -16,11 +16,11 @@ class Pokemon:
     def get_attack(self):
         return self.attack
 
-    def get_type(self):
-        return self.type
+    # def get_type(self):
+    #     return self.type
 
-    def get_type_icon(self):
-        return self.type_icon
+    # def get_type_icon(self):
+    #     return self.type_icon
 
     def get_speed(self):
         return self.speed
@@ -40,50 +40,67 @@ class Pokemon:
         return self.is_knocked_out
 
 
+class Fire_Pokemon(Pokemon):
+    def __init__(self, name, max_hp, attack, speed):
+        super().__init__(name, max_hp, attack, speed)
+        self.type = "fire"
+        self.type_icon = "🔥"
+        self.weakenesses = ["water"]
+
+
+class Water_Pokemon(Pokemon):
+    def __init__(self, name, max_hp, attack, speed):
+        super().__init__(name, max_hp, attack, speed)
+        self.type = "fire"
+        self.type_icon = "💧"
+        self.weakenesses = ["grass"]
+
+
+class Grass_Pokemon(Pokemon):
+    def __init__(self, name, max_hp, attack, speed):
+        super().__init__(name, max_hp, attack, speed)
+        self.type = "fire"
+        self.type_icon = "🍃"
+        self.weakenesses = ["fire"]
+
+
+class Psychic_Pokemon(Pokemon):
+    def __init__(self, name, max_hp, attack, speed):
+        super().__init__(name, max_hp, attack, speed)
+        self.type = "psychic"
+        self.type_icon = "🔮"
+        self.weakenesses = ["psychic"]
+
+
 pokemon_list = {
     "Gengar": {
         "name": "Gengar",
         "hp": 165,
         "attack": 75,
         "speed": 100,
-        "type": "psychic",
-        "type_icon": "🔮",
-        "weaknesses": "psychic"
+        "type": "Psychic",
     },
     "Charizard": {
         "name": "Charizard",
         "hp": 200,
         "attack": 95,
         "speed": 75,
-        "type": "fire",
-        "type_icon": "🔥",
-        "weaknesses": "water"
+        "type": "Fire",
     },
     "Blastoise": {
         "name": "Blastoise",
         "hp": 190,
         "attack": 85,
         "speed": 70,
-        "type": "water",
-        "type_icon": "💧",
-        "weaknesses": "grass"
+        "type": "Water",
     },
     "Venasaur": {
         "name": "Venasaur",
         "hp": 185,
         "attack": 80,
         "speed": 70,
-        "type": "grass",
-        "type_icon": "🍃",
-        "weaknesses": "fire"
+        "type": "Grass",
     },
-}
-
-type_icons = {
-    "fire": "🔥",
-    "grass": "🍃",
-    "psychic": "🔮",
-    "water": "💧",
 }
 
 
@@ -91,22 +108,14 @@ def build_pokemon_roster():
     # building a list of all possible pokemon to choose from this game
     pokemon_roster = {}
     for name, stats in pokemon_list.items():
-        # pokemon constructor: name, hp, attack, speed, type, weakness
-        # add to pokemon_roster pokemon of class Pokemon using the pokemon_list for the data
-        pokemon_roster[name] = Pokemon(stats["name"], stats["hp"], stats["attack"], stats["speed"], stats["type"], stats["type_icon"], stats["weaknesses"])
+        pokemon_roster[name] = globals()[f"{stats['type']}_Pokemon"](stats["name"], stats["hp"], stats["attack"], stats["speed"])
     return pokemon_roster
 
 
-def list_pokemon_stats():
+def list_pokemon_stats(roaster):
     print("------------------------------------- POKEMON STATS --------------------------------------\n ")
-    for i, pokemon in enumerate(pokemon_list):
-        formatted_pokemon_name = pokemon
-        while len(formatted_pokemon_name) < 9:
-            formatted_pokemon_name += " "
-        stats = pokemon_list[pokemon]
-        # for stat, value in pokemon_list[pokemon].items():
-        #     sentence += (f"{stat.upper()}: {value} / ")
-        print(
-            f"{i + 1}) {formatted_pokemon_name} | HP: {stats['hp']} | ATTACK: {stats['attack']} | SPEED: {stats['speed']} | TYPE {stats['type']} {stats['type_icon']} | WEAKNESSES: {stats['weaknesses']} {type_icons[stats['weaknesses']]}"
-        )
+    for pokemon in roaster:
+        selected = roaster[pokemon]
+        # print(roaster[pokemon].current_hp)
+        print(f"{1}) {selected.name} | HP: {selected.max_hp} | ATTACK: {selected.attack} | SPEED: {selected.speed} | TYPE {selected.type} {selected.type_icon}")
     print("\n------------------------------------------------------------------------------------------ ")

@@ -19,12 +19,12 @@ print('''_
 player = User("Player")
 computer = User("Computer")
 
-list_pokemon_stats()
 
 # lOAD IN POKEMON
 # creates a dictionary of Pokemon objects based on the pokemon within pokemon_list
 pokemon_roster = build_pokemon_roster()
 
+list_pokemon_stats(pokemon_roster)
 # deep copying pokemone rosters for each user, so they have their own unique Pokemon objects to choose from, and add to their team
 computers_pokemon_roster = copy.deepcopy(pokemon_roster)
 players_pokemon_roster = copy.deepcopy(pokemon_roster)
