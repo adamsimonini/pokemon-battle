@@ -7,7 +7,7 @@ class User():
         self.name = name
         self.pokemon_team = {}
         self.active_pokemon = None
-        self.winner = False
+        self.is_loser = False
 
     def get_name(self):
         return self.name
@@ -29,11 +29,24 @@ class User():
             print(f"{self.name}'s {pokemon} has {current_hp}/{max_hp} HP")
 
     def select_active_pokemon(self):
+        self.pokemon_team = filter_knocked_out(self.pokemon_team)
         pokemon_team = list(self.pokemon_team.keys())
+        if len(pokemon_team) == 0:
+            print(f"{self.name} has had all their pokemon knocked out!")
+            return False
         if self.name == "Computer":
             selected_pokemon = random.choice(pokemon_team)
             self.active_pokemon = self.pokemon_team[selected_pokemon]
-            return None
+            return
         number_to_pokemon = list_pokemon_to_user(self.pokemon_team)
         players_choice = int(input("\nInput a number from the list above to select a pokemon. It will become your active pokemon: "))
         self.active_pokemon = self.pokemon_team[number_to_pokemon[players_choice]]
+
+
+def filter_knocked_out(pokemon_team):
+    remaining_team = {}
+    for key in pokemon_team:
+        pokemon = pokemon_team[key]
+        if not pokemon.is_knocked_out:
+            remaining_team[key] = pokemon
+    return remaining_team

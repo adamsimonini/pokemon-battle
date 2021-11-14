@@ -6,21 +6,12 @@ class Pokemon:
         self.is_knocked_out = False
         self.attack = attack
         self.speed = speed
-        # self.type = type
-        # self.type_icon = type_icon
-        # self.weaknesses = weaknesses
 
     def get_name(self):
         return self.name
 
     def get_attack(self):
         return self.attack
-
-    # def get_type(self):
-    #     return self.type
-
-    # def get_type_icon(self):
-    #     return self.type_icon
 
     def get_speed(self):
         return self.speed

@@ -42,13 +42,16 @@ player.print_team_status()
 # BATTLE PHASE
 
 # both users select their initial active pokemon
-set_active_pokemon(computer)
-set_active_pokemon(player)
+computer.select_active_pokemon()
+player.select_active_pokemon()
 
 # TODO: while neither player winner, battle
 # battle_music = vlc.MediaPlayer("file:///audio/pokemon_battle-music.mp3")
 # battle_music.play()
-battle_turn(player, computer)
+
+while player.is_loser == False and computer.is_loser == False:
+    battle(player, computer)
+
 # battle_music.stop()
 
 # assign two users
