@@ -2,7 +2,7 @@ import random
 from pokemon_pkg.choose import list_pokemon_to_user
 
 
-class User():
+class Trainer():
     def __init__(self, name):
         self.name = name
         self.pokemon_team = {}
@@ -32,11 +32,13 @@ class User():
         self.pokemon_team = filter_knocked_out(self.pokemon_team)
         pokemon_team = list(self.pokemon_team.keys())
         if len(pokemon_team) == 0:
-            print(f"{self.name} has had all their pokemon knocked out!")
+            print(f"\n❌❌❌ {self.name} has had all their pokemon knocked out! ❌❌❌")
             return False
         if self.name == "Computer":
             selected_pokemon = random.choice(pokemon_team)
             self.active_pokemon = self.pokemon_team[selected_pokemon]
+            pokemon = self.active_pokemon
+            print(f"\nComputer has chosen {pokemon.type_icon}-{pokemon.name} as its active pokemon")
             return
         number_to_pokemon = list_pokemon_to_user(self.pokemon_team)
         players_choice = int(input("\nInput a number from the list above to select a pokemon. It will become your active pokemon: "))

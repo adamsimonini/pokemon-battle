@@ -1,7 +1,6 @@
-import random
 import copy
 # import vlc
-from user_pkg.user import *
+from trainer_pkg.trainer import *
 from pokemon_pkg.pokemon import *
 from pokemon_pkg.choose import *
 from battle_pkg.battle import *
@@ -16,8 +15,8 @@ print('''_
 |_|     
 ''')
 
-player = User("Player")
-computer = User("Computer")
+player = Trainer("Player")
+computer = Trainer("Computer")
 
 
 # lOAD IN POKEMON
@@ -42,8 +41,8 @@ player.print_team_status()
 # BATTLE PHASE
 
 # both users select their initial active pokemon
-computer.select_active_pokemon()
 player.select_active_pokemon()
+computer.select_active_pokemon()
 
 # TODO: while neither player winner, battle
 # battle_music = vlc.MediaPlayer("file:///audio/pokemon_battle-music.mp3")
