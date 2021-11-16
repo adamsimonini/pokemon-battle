@@ -67,4 +67,3 @@ def declare_winner(user):
     print(f"\n***** {user.name} has lost the game! *****")
     print("***** You lose. Better luck next time trainer! 😭 *****")
     exit()
-`

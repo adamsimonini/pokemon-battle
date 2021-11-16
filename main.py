@@ -51,9 +51,3 @@ while player.is_loser == False and computer.is_loser == False:
     battle(player, computer)
 
 battle_music.stop()
-
-# assign two users
-# enablue user to choose 3 pokemon
-# randomly have computer choose 3 pokemon
-
-# check if knockout, if so, check if win
