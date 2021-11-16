@@ -1,5 +1,5 @@
 import copy
-# import vlc
+import vlc
 from trainer_pkg.trainer import *
 from pokemon_pkg.pokemon import *
 from pokemon_pkg.choose import *
@@ -44,14 +44,13 @@ player.print_team_status()
 player.select_active_pokemon()
 computer.select_active_pokemon()
 
-# TODO: while neither player winner, battle
-# battle_music = vlc.MediaPlayer("file:///audio/pokemon_battle-music.mp3")
-# battle_music.play()
+battle_music = vlc.MediaPlayer("file:///audio/pokemon_battle-music.mp3")
+battle_music.play()
 
 while player.is_loser == False and computer.is_loser == False:
     battle(player, computer)
 
-# battle_music.stop()
+battle_music.stop()
 
 # assign two users
 # enablue user to choose 3 pokemon

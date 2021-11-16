@@ -56,12 +56,6 @@ def check_for_knockout(user):
         if user.select_active_pokemon() == False:
             user.is_loser = True
             declare_winner(user)
-            # if user.name == "Computer":
-            #     print(f"\n***** {user.name} has lost the game! *****")
-            #     print("** Congratulations! You win! **")
-            #     return
-            # print(f"\n***** {user.name} has lost the game! *****")
-            # print("You lose. Better luck next time trainer!")
     return False
 
 
@@ -73,3 +67,4 @@ def declare_winner(user):
     print(f"\n***** {user.name} has lost the game! *****")
     print("***** You lose. Better luck next time trainer! 😭 *****")
     exit()
+`
