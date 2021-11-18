@@ -1,3 +1,6 @@
+import random
+
+
 class Pokemon:
     def __init__(self, name, hp, attack, speed):
         self.name = name
@@ -7,22 +10,10 @@ class Pokemon:
         self.attack = attack
         self.speed = speed
 
-    def get_name(self):
-        return self.name
-
-    def get_attack(self):
-        return self.attack
-
-    def get_speed(self):
-        return self.speed
-
     def get_hp_status(self):
         if self.current_hp > 0:
             return f"{self.name} has {self.current_hp}/{self.max_hp} HP remaining"
         return False
-
-    def get_current_hp(self):
-        return self.current_hp
 
     def set_hp(self, hp):
         self.current_hp = hp
@@ -63,10 +54,18 @@ class Psychic_Pokemon(Pokemon):
         self.weakenesses = ["psychic"]
 
 
+class Lightening_Pokemon(Pokemon):
+    def __init__(self, name, max_hp, attack, speed):
+        super().__init__(name, max_hp, attack, speed)
+        self.type = "lightening"
+        self.type_icon = "⚡"
+        self.weakenesses = ["fighting"]
+
+
 pokemon_list = {
     "Gengar": {
         "name": "Gengar",
-        "hp": 165,
+        "hp": 170,
         "attack": 75,
         "speed": 100,
         "type": "Psychic",
@@ -92,6 +91,20 @@ pokemon_list = {
         "speed": 70,
         "type": "Grass",
     },
+    "Mew": {
+        "name": "Mew",
+        "hp": 170,
+        "attack": 105,
+        "speed": 90,
+        "type": "Psychic",
+    },
+    "Raichu": {
+        "name": "Raichu",
+        "hp": 170,
+        "attack": 85,
+        "speed": 90,
+        "type": "Lightening",
+    },
 }
 
 
@@ -99,7 +112,7 @@ def build_pokemon_roster():
     # building a list of all possible pokemon to choose from this game
     pokemon_roster = {}
     for name, stats in pokemon_list.items():
-        pokemon_roster[name] = globals()[f"{stats['type']}_Pokemon"](stats["name"], stats["hp"], stats["attack"], stats["speed"])
+        pokemon_roster[name] = globals()[f"{stats['type']}_Pokemon"](stats["name"], stat_modifier(stats["hp"]), stat_modifier(stats["attack"]), stat_modifier(stats["speed"]))
     return pokemon_roster
 
 
@@ -110,3 +123,9 @@ def list_pokemon_stats(roaster):
         # print(roaster[pokemon].current_hp)
         print(f"{1}) {selected.name} | HP: {selected.max_hp} | ATTACK: {selected.attack} | SPEED: {selected.speed} | TYPE {selected.type} {selected.type_icon}")
     print("\n------------------------------------------------------------------------------------------ ")
+
+
+def stat_modifier(stat):
+    # plus or minutes 15% on each stat
+    modification = 1 + (random.randrange(-15, 16) / 100)
+    return round(stat * modification)

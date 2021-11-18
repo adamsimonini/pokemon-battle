@@ -29,6 +29,7 @@ class Trainer():
             print(f"{self.name}'s {pokemon} has {current_hp}/{max_hp} HP")
 
     def select_active_pokemon(self):
+        print(f"\n--- {self.name} must choose an active pokemon --\n ")
         self.pokemon_team = filter_knocked_out(self.pokemon_team)
         pokemon_team = list(self.pokemon_team.keys())
         if len(pokemon_team) == 0:
