@@ -33,7 +33,7 @@ class Fire_Pokemon(Pokemon):
 class Water_Pokemon(Pokemon):
     def __init__(self, name, max_hp, attack, speed):
         super().__init__(name, max_hp, attack, speed)
-        self.type = "fire"
+        self.type = "water"
         self.type_icon = "💧"
         self.weakenesses = ["grass"]
 
@@ -41,7 +41,7 @@ class Water_Pokemon(Pokemon):
 class Grass_Pokemon(Pokemon):
     def __init__(self, name, max_hp, attack, speed):
         super().__init__(name, max_hp, attack, speed)
-        self.type = "fire"
+        self.type = "gress"
         self.type_icon = "🍃"
         self.weakenesses = ["fire"]
 
