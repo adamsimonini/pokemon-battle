@@ -121,7 +121,7 @@ def list_pokemon_stats(roaster):
     for pokemon in roaster:
         selected = roaster[pokemon]
         # print(roaster[pokemon].current_hp)
-        print(f"{1}) {selected.name} | HP: {selected.max_hp} | ATTACK: {selected.attack} | SPEED: {selected.speed} | TYPE {selected.type} {selected.type_icon}")
+        print(f"{1}) {selected.name} | HP: {selected.max_hp} | ATTACK: {selected.attack} | SPEED: {selected.speed} | TYPE: {selected.type} {selected.type_icon}")
     print("\n------------------------------------------------------------------------------------------ ")
 
 

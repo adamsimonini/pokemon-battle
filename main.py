@@ -1,19 +1,14 @@
+# import vlc
 import copy
-import vlc
 from trainer_pkg.trainer import *
 from pokemon_pkg.pokemon import *
 from pokemon_pkg.choose import *
 from battle_pkg.battle import *
+from art_pkg.pokemon import *
 
-print('''_                              
-            | |                             
- _ __   ___ | | _____ _ __ ___   ___  _ __  
-| '_ \ / _ \| |/ / _ \ '_ ` _ \ / _ \| '_ \ 
-| |_) | (_) |   <  __/ | | | | | (_) | | | |
-| .__/ \___/|_|\_\___|_| |_| |_|\___/|_| |_|
-| |                                         
-|_|     
-''')
+draw_pokemon_logo()
+
+draw_charizard()
 
 player = Trainer("Player")
 computer = Trainer("Computer")
@@ -45,5 +40,5 @@ print("\n------------------------------------- BATTLE --------------------------
 
 while player.is_loser == False and computer.is_loser == False:
     battle(player, computer)
-
+draw_blastoise()
 # battle_music.stop()
