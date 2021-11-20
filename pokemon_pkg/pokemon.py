@@ -27,7 +27,7 @@ class Fire_Pokemon(Pokemon):
         super().__init__(name, max_hp, attack, speed)
         self.type = "fire"
         self.type_icon = "🔥"
-        self.weakenesses = ["water"]
+        self.weaknesses = ["water"]
 
 
 class Water_Pokemon(Pokemon):
@@ -35,7 +35,7 @@ class Water_Pokemon(Pokemon):
         super().__init__(name, max_hp, attack, speed)
         self.type = "water"
         self.type_icon = "💧"
-        self.weakenesses = ["grass"]
+        self.weaknesses = ["grass"]
 
 
 class Grass_Pokemon(Pokemon):
@@ -43,7 +43,7 @@ class Grass_Pokemon(Pokemon):
         super().__init__(name, max_hp, attack, speed)
         self.type = "gress"
         self.type_icon = "🍃"
-        self.weakenesses = ["fire"]
+        self.weaknesses = ["fire"]
 
 
 class Psychic_Pokemon(Pokemon):
@@ -51,7 +51,7 @@ class Psychic_Pokemon(Pokemon):
         super().__init__(name, max_hp, attack, speed)
         self.type = "psychic"
         self.type_icon = "🔮"
-        self.weakenesses = ["psychic"]
+        self.weaknesses = ["psychic"]
 
 
 class Lightening_Pokemon(Pokemon):
@@ -59,7 +59,7 @@ class Lightening_Pokemon(Pokemon):
         super().__init__(name, max_hp, attack, speed)
         self.type = "lightening"
         self.type_icon = "⚡"
-        self.weakenesses = ["fighting"]
+        self.weaknesses = ["fighting"]
 
 
 pokemon_list = {

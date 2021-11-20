@@ -1,7 +1,6 @@
 import random
 from pokemon_pkg.choose import list_pokemon_to_user
 
-
 class Trainer():
     def __init__(self, name):
         self.name = name

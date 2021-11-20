@@ -6,10 +6,18 @@ def attack(attacker, defender):
     time.sleep(1.2)
     attackers_pokemon = attacker.active_pokemon
     defenders_pokemon = defender.active_pokemon
+    attack_damage = attackers_pokemon.attack
 
-    print(f"\n{attacker.name}'s {attackers_pokemon.type_icon}-{attackers_pokemon.name}-🗡️  attacks {defender.name}'s {defenders_pokemon.type_icon}-{defenders_pokemon.name}-🛡️  for {attackers_pokemon.attack} damage!")
     # remaining_hp = (opponent.get_current_hp()) - (attacker.get_attack())
-    defenders_pokemon.current_hp = defenders_pokemon.current_hp - attackers_pokemon.attack
+    if attackers_pokemon.type in defenders_pokemon.weaknesses:
+        attack_damage = attack_damage * 1.5
+        print(f"\n{attackers_pokemon.name}'s attack is super effective!")
+        defenders_pokemon.current_hp = defenders_pokemon.current_hp - attack_damage
+    else:
+        defenders_pokemon.current_hp = defenders_pokemon.current_hp - attackers_pokemon.attack
+
+    print(f"\n{attacker.name}'s {attackers_pokemon.type_icon}-{attackers_pokemon.name}-🗡️  attacks {defender.name}'s {defenders_pokemon.type_icon}-{defenders_pokemon.name}-🛡️  for {attack_damage} damage!")
+
     if defenders_pokemon.current_hp < 1:
         defenders_pokemon.is_knocked_out = True
         return False
