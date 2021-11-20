@@ -85,7 +85,7 @@ pokemon_list = {
         "type": "Water",
     },
     "Venasaur": {
-        "name": "Venasaur",
+        "name": "Venusaur",
         "hp": 185,
         "attack": 80,
         "speed": 70,
