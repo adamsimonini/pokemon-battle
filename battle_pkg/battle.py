@@ -43,7 +43,7 @@ def battle(user_one, user_two):
     first_active_pokemon = first.active_pokemon
     second_active_pokemon = second.active_pokemon
 
-    print(f"*** {first.name}'s {first_active_pokemon.name} attacks first, and then {second.name}'s {second_active_pokemon.name} will attack if it survives ***")
+    # print(f"*** {first.name}'s {first_active_pokemon.name} attacks first, and then {second.name}'s {second_active_pokemon.name} will attack if it survives ***")
     while not first_active_pokemon.is_knocked_out and not second_active_pokemon.is_knocked_out:
 
         attack(first, second)
