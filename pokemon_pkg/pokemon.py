@@ -35,7 +35,7 @@ class Water_Pokemon(Pokemon):
         super().__init__(name, max_hp, attack, speed)
         self.type = "water"
         self.type_icon = "💧"
-        self.weaknesses = ["grass"]
+        self.weaknesses = ["grass, lightening"]
 
 
 class Grass_Pokemon(Pokemon):
@@ -59,7 +59,7 @@ class Lightening_Pokemon(Pokemon):
         super().__init__(name, max_hp, attack, speed)
         self.type = "lightening"
         self.type_icon = "⚡"
-        self.weaknesses = ["fighting"]
+        self.weaknesses = ["fighting, grass"]
 
 
 pokemon_list = {
