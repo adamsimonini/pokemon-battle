@@ -64,8 +64,6 @@ An interative terminal game written in Python where players choose a team of 3 p
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 - [![Python][python-shield]][python-url]
 - [![Conda][conda-shield]][conda-url]
 
